@@ -147,11 +147,31 @@ const Navbar = () => {
                 <Link href={link.url}>{link.title}</Link>
               </motion.div>
             ))} */}
-            <motion.div variants={listItemVariants} className="">
-              <Link href="/">Home</Link>
-              <Link href="/about">About</Link>
-              <Link href="/portfolio">Portfolio</Link>
-              <Link href="/contact">Contact</Link>
+            <motion.div
+              variants={listItemVariants}
+              className="flex gap-10 flex-col items-center justify-center h-full"
+              whileHover={{ cursor: "pointer" }}
+            >
+              <motion.div variants={listItemVariants}>
+                <Link href="/" className="w-full block">
+                  Home
+                </Link>
+              </motion.div>
+              <motion.div variants={listItemVariants}>
+                <Link href="/about" className="w-full block">
+                  About
+                </Link>
+              </motion.div>
+              <motion.div variants={listItemVariants}>
+                <Link href="/portfolio" className="w-full block">
+                  Portfolio
+                </Link>
+              </motion.div>
+              <motion.div variants={listItemVariants}>
+                <Link href="/contact" className="w-full block">
+                  Contact
+                </Link>
+              </motion.div>
             </motion.div>
           </motion.div>
         )}
