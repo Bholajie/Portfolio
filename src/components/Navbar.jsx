@@ -138,16 +138,7 @@ const Navbar = () => {
             animate="opened"
             className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-40"
           >
-            {/* {links.map((link) => (
-              <motion.div
-                variants={listItemVariants}
-                className=""
-                key={link.title}
-              >
-                <Link href={link.url}>{link.title}</Link>
-              </motion.div>
-            ))} */}
-            <motion.div
+            {/* <motion.div
               variants={listItemVariants}
               className="flex gap-10 flex-col items-center justify-center h-full"
               whileHover={{ cursor: "pointer" }}
@@ -172,7 +163,23 @@ const Navbar = () => {
                   Contact
                 </Link>
               </motion.div>
-            </motion.div>
+            </motion.div> */}
+            <div className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex items-center justify-center z-40">
+              <nav className="flex flex-col items-center justify-center gap-10 text-4xl">
+                <Link href="/" className="hover:text-gray-300">
+                  Home
+                </Link>
+                <Link href="/about" className="hover:text-gray-300">
+                  About
+                </Link>
+                <Link href="/portfolio" className="hover:text-gray-300">
+                  Portfolio
+                </Link>
+                <Link href="/contact" className="hover:text-gray-300">
+                  Contact
+                </Link>
+              </nav>
+            </div>
           </motion.div>
         )}
       </div>
