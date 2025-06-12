@@ -14,7 +14,7 @@ const Homepage = () => {
     >
       <div className="min-h-screen flex flex-col lg:flex-row px-2 xs:px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 overflow-x-hidden">
         {/* IMAGE CONTAINER */}
-        <div className="w-full h-64 xs:h-72 sm:h-80 relative flex justify-center items-center lg:h-full lg:w-1/2">
+        <div className="w-full h-64 xs:h-72 sm:h-80 lg:h-[calc(100vh-6rem)] relative flex justify-center items-center lg:w-1/2">
           {/* <Image src="/hero.png" alt="" fill className="object-contain" /> */}
           <Image src="/BJ2.jpg" alt="" fill className="object-contain" priority />
         </div>
