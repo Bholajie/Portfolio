@@ -143,7 +143,7 @@ const Navbar = () => {
             variants={listVariants}
             initial="closed"
             animate="opened"
-            className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-40"
+            className="fixed inset-0 bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-50"
           >
             <nav className="flex flex-col items-center justify-center gap-10 text-4xl">
               {links.map((link) => (
