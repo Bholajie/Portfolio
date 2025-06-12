@@ -43,14 +43,14 @@ const ContactPage = () => {
 
   return (
     <motion.div
-      className="min-h-screen"
+      className="max-h-screen"
       initial={{ y: "-200vh" }}
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
       <div className="flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 py-8 lg:py-0">
         {/* TEXT CONTAINER */}
-        <div className="lg:h-screen lg:w-1/2 flex items-center justify-center text-4xl sm:text-5xl lg:text-6xl mb-8 lg:mb-0">
+        <div className="lg:w-1/2 flex items-center justify-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-8 lg:mb-0">
           <div>
             {text.split("").map((letter, index) => (
               <motion.span
@@ -70,15 +70,15 @@ const ContactPage = () => {
           </div>
         </div>
         {/* FORM CONTAINER */}
-        <div className="lg:h-screen lg:w-1/2 flex items-center justify-center">
+        <div className="lg:w-1/2 flex items-center justify-center">
           <form
             onSubmit={sendEmail}
-            className="w-full bg-red-50 rounded-xl text-xl flex flex-col gap-8 p-6 sm:p-12 lg:p-24"
+            className="w-full bg-red-50 rounded-xl text-base sm:text-lg md:text-xl flex flex-col gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16"
           >
             <span>Dear BolajiX Dev,</span>
             <textarea
-              rows={6}
-              className="bg-transparent border-b-2 border-b-black outline-none resize-none w-full"
+              rows={4}
+              className="bg-transparent border-b-2 border-b-black outline-none resize-none w-full text-sm sm:text-base md:text-lg"
               name="user_message"
               required
             />
@@ -86,23 +86,23 @@ const ContactPage = () => {
             <input
               name="user_email"
               type="email"
-              className="bg-transparent border-b-2 border-b-black outline-none w-full"
+              className="bg-transparent border-b-2 border-b-black outline-none w-full text-sm sm:text-base md:text-lg"
               required
             />
             <span>Regards</span>
             <button 
-              className="bg-purple-200 rounded font-semibold text-gray-600 p-4 disabled:opacity-50 w-full"
+              className="bg-purple-200 rounded font-semibold text-gray-600 p-3 sm:p-4 disabled:opacity-50 w-full text-sm sm:text-base md:text-lg hover:bg-purple-300 transition-colors"
               disabled={isLoading}
             >
               {isLoading ? 'Sending...' : 'Send'}
             </button>
             {success && (
-              <span className="text-green-600 font-semibold text-center">
+              <span className="text-green-600 font-semibold text-center text-sm sm:text-base md:text-lg">
                 Your message has been sent successfully!
               </span>
             )}
             {error && (
-              <span className="text-red-600 font-semibold text-center">
+              <span className="text-red-600 font-semibold text-center text-sm sm:text-base md:text-lg">
                 Something went wrong!
               </span>
             )}

@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NavLink from "./NavLink";
 import { motion } from "framer-motion";
 import PortfolioPage from "@/app/(pages)/portfolio/page";
+import { usePathname } from "next/navigation";
 
 const links = [
   { url: "/", title: "Home" },
@@ -16,6 +17,12 @@ const links = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Close menu when route changes
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   const topVariants = {
     closed: {
@@ -138,48 +145,18 @@ const Navbar = () => {
             animate="opened"
             className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-40"
           >
-            {/* <motion.div
-              variants={listItemVariants}
-              className="flex gap-10 flex-col items-center justify-center h-full"
-              whileHover={{ cursor: "pointer" }}
-            >
-              <motion.div variants={listItemVariants}>
-                <Link href="/" className="w-full block">
-                  Home
+            <nav className="flex flex-col items-center justify-center gap-10 text-4xl">
+              {links.map((link) => (
+                <Link
+                  key={link.title}
+                  href={link.url}
+                  className="hover:text-gray-300 transition-colors"
+                  onClick={() => setOpen(false)}
+                >
+                  {link.title}
                 </Link>
-              </motion.div>
-              <motion.div variants={listItemVariants}>
-                <Link href="/about" className="w-full block">
-                  About
-                </Link>
-              </motion.div>
-              <motion.div variants={listItemVariants}>
-                <Link href="/portfolio" className="w-full block">
-                  Portfolio
-                </Link>
-              </motion.div>
-              <motion.div variants={listItemVariants}>
-                <Link href="/contact" className="w-full block">
-                  Contact
-                </Link>
-              </motion.div>
-            </motion.div> */}
-            <div className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex items-center justify-center z-40">
-              <nav className="flex flex-col items-center justify-center gap-10 text-4xl">
-                <Link href="/" className="hover:text-gray-300">
-                  Home
-                </Link>
-                <Link href="/about" className="hover:text-gray-300">
-                  About
-                </Link>
-                <Link href="/portfolio" className="hover:text-gray-300">
-                  Portfolio
-                </Link>
-                <Link href="/contact" className="hover:text-gray-300">
-                  Contact
-                </Link>
-              </nav>
-            </div>
+              ))}
+            </nav>
           </motion.div>
         )}
       </div>

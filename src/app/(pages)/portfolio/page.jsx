@@ -8,29 +8,37 @@ const items = [
   {
     id: 1,
     color: "from-red-300 to-blue-300",
+    title: "Sheyilor Portfolio",
+    desc: "A modern and responsive portfolio website showcasing professional work and skills. Built with Next.js and featuring smooth animations, responsive design, and an intuitive user interface. The portfolio highlights projects, skills, and experience in an engaging and visually appealing way.",
+    img: "/Sheyilor.png",
+    link: "https://sheyilorphotography.com/",
+  },
+  {
+    id: 2,
+    color: "from-blue-300 to-violet-300",
     title: "Taojaa",
     desc: "Taojaa is a software development company that empowers small businesses to connect with customers anytime, simplify digital commerce for Africans worldwide, and provide tools for growth and operational management.",
     img: "/taojaa.png",
     link: "https://www.taojaa.com/",
   },
   {
-    id: 2,
-    color: "from-blue-300 to-violet-300",
+    id: 3,
+    color: "from-violet-300 to-purple-300",
     title: "HRMB",
     desc: "It is a Multi-Level Marketing (MLM), also known as network marketing. It  is a business model where individuals sell products or services directly to consumers, often through personal connections, while also recruiting others to join their sales network. Participants earn money not only from their own sales but also from a percentage of the sales made by the people they recruit (known as their 'downline').",
     img: "/hrmb.png",
     link: "https://hrmb-app.vercel.app/",
   },
   {
-    id: 3,
-    color: "from-violet-300 to-purple-300",
+    id: 4,
+    color: "from-purple-300 to-red-300",
     title: "CRM for TLCS",
     desc: "It is a system or strategy used  to manage interactions with current and potential customers. It helps companies streamline processes, improve customer relationships, and increase profitability",
     img: "/tlcs.png",
     link: "https://tlcs-xi.vercel.app/",
   },
   {
-    id: 4,
+    id: 5,
     color: "from-purple-300 to-red-300",
     title: "e-commerce-inventory-and-order-microservices",
     desc: "E-commerce inventory and order microservices are modular systems designed to manage product stock levels and order processing independently. They ensure scalability, real-time updates, and seamless integration within e-commerce platforms.",
@@ -86,7 +94,7 @@ const PortfolioPage = () => {
 
       <div className="h-[600vh] relative" ref={ref}>
         <div className="w-full h-[calc(100vh-6rem)] flex items-center justify-center">
-          <h1 className="text-4xl md:text-6xl lg:text-8xl text-center font-bold">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl text-center font-bold">
             My Works
           </h1>
         </div>
@@ -94,18 +102,17 @@ const PortfolioPage = () => {
         <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
           <motion.div style={{ x }} className="flex">
             <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" />
-            {/* <div className="h-[120%] w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" /> */}
             {items.map((item) => (
               <div
                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                 key={item.id}
               >
-                <div className="flex flex-col gap-4 text-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+                <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 text-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
                     {item.title}
                   </h1>
 
-                  <div className="relative aspect-video w-full max-w-[600px] mx-auto">
+                  <div className="relative aspect-video w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] mx-auto">
                     <Image
                       src={item.img}
                       alt={item.title}
@@ -115,13 +122,13 @@ const PortfolioPage = () => {
                     />
                   </div>
 
-                  <p className="text-base sm:text-lg md:text-xl max-w-prose">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl max-w-prose">
                     {item.desc}
                   </p>
 
                   <div className="flex justify-end w-full">
                     <Link href={item.link} className="inline-block">
-                      <button className="px-6 py-3 text-sm sm:text-base md:text-lg bg-white text-gray-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+                      <button className="px-4 py-2 sm:px-5 sm:py-3 md:px-6 md:py-4 text-xs sm:text-sm md:text-base lg:text-lg bg-white text-gray-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
                         See Demo
                       </button>
                     </Link>
@@ -133,14 +140,14 @@ const PortfolioPage = () => {
         </div>
       </div>
 
-      <div className="w-screen h-screen flex flex-col gap-16 items-center justify-center text-center">
-        <h1 className="text-8xl">Do you have a project?</h1>
+      <div className="w-screen h-screen flex flex-col gap-8 sm:gap-12 md:gap-16 items-center justify-center text-center px-4 sm:px-6 lg:px-8">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">Do you have a project?</h1>
         <div className="relative">
           <motion.svg
             animate={{ rotate: 360 }}
             transition={{ duration: 8, ease: "linear", repeat: Infinity }}
             viewBox="0 0 300 300"
-            className="w-64 h-64 md:w-[500px] md:h-[500px] "
+            className="w-48 h-48 sm:w-64 sm:h-64 md:w-[500px] md:h-[500px]"
           >
             <defs>
               <path
@@ -149,14 +156,14 @@ const PortfolioPage = () => {
               />
             </defs>
             <text fill="#000">
-              <textPath xlinkHref="#circlePath" className="text-xl">
+              <textPath xlinkHref="#circlePath" className="text-sm sm:text-base md:text-lg">
                 Front-end and Backend Developer
               </textPath>
             </text>
           </motion.svg>
           <Link
             href="/contact"
-            className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center"
+            className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center text-xs sm:text-sm md:text-base lg:text-lg hover:bg-gray-800 transition-colors"
           >
             Hire Me
           </Link>
